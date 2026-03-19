@@ -31,6 +31,69 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
+```
+class Details:
+    def __init__(self):
+        self.__id="<No Id>"
+        self.__name="<No Name>"
+        self.__gender="<No Gender>"
+    def setData(self,id,name,gender):
+        self.__id=id
+        self.__name=name
+        self.__gender=gender
+    def showData(self):
+        print("Id: ",self.__id)
+        print("Name: ",self.__name)
+        print("Gender: ",self.__gender)
+        
+class Employee(Details):
+    def __init__(self):
+        self.__company="<No Company>"
+        self.__dept="<No Dept>"
+    def setEmployee(self,id,name,gender,comp,dept):
+        self.setData(id,name,gender)
+        self.__company=comp
+        self.__dept=dept
+    def showEmployee(self):
+        self.showData()
+        print("Company: ",self.__company)
+        print("Department: ",self.__dept)
+class Patient(Details):
+    def __init__(self):
+        self.__hospital="<No Hospital>"
+        self.__dept="<No Dept>"
+    def setEmployee(self,id,name,gender,hos,dept):
+        self.setData(id,name,gender)
+        self.__hospital=hos
+        self.__dept=dept 
+    def showEmployee(self):
+        self.showData()
+        print("Hospital: ",self.__hospital)
+        print("Department: ",self.__dept) 
+        
+id=int(input())
+name=input()
+gender=input()
+comp=input()
+dept=input()
+id1=int(input())
+nam=input()
+gen=input()
+hos=input()
+dep=input()
+
+print("Employee Object")
+e=Employee()
+e.setEmployee(id,name,gender,comp,dept)
+e.showEmployee()
+print("\nPatient Object")
+d=Patient()
+d.setEmployee(id1,nam,gen,hos,dep)
+d.showEmployee()
+```
 ## Sample Output
+
+<img width="453" height="359" alt="image" src="https://github.com/user-attachments/assets/733eccc3-4583-414a-960e-e84f106ac33d" />
+## Result
+Thus, the program that uses Hierarchical Inheritance to input and display Employee and Patient details hase been executed successfully.
 
